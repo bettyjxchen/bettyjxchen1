@@ -38,7 +38,7 @@
     ];
 
     function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise('/hackers/list');
+        $urlRouterProvider.otherwise('/home');
         $locationProvider.html5Mode(true);
     }
 })();

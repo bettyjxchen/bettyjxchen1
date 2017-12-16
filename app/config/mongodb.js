@@ -1,4 +1,4 @@
-const conn = require('../app/mongodb').connection
+const conn = require('../mongodb').connection
 
 module.exports = configMongoDB
 
