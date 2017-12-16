@@ -10,8 +10,8 @@
             .state('site.home', {
                 url: '/home',
                 views: {
-                    'content@site': {
-                        templateUrl: 'client/site/home/home.html',
+                    'content': {
+                        templateUrl: '/client/site/home/home.html',
                         controller: 'homeController as homeCtrl'
                     }
                 }
@@ -45,8 +45,6 @@
             })
 
     }
-
-
 
 
 

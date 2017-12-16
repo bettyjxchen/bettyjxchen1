@@ -13,8 +13,8 @@
                 // abstract: true,
                 url: '/',
                 views: {
-                    root: {
-                        templateUrl: 'client/layout/site.tpl.html'
+                    'root': {
+                        templateUrl: '/client/layout/site.tpl.html'
                     }
                 }
             })
