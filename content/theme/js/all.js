@@ -109,7 +109,7 @@
     });
     
     // Function for block height 100%
-    function height_line(height_object, height_donor){
+    function height_line(height_object, height_donor){       
         height_object.height(height_donor.height());
         height_object.css({
             "line-height": height_donor.height() + "px"

@@ -11,9 +11,11 @@
         $stateProvider
             .state('site', {
                 // abstract: true,
+                url: '/site',
                 views: {
                     'root': {
-                        templateUrl: '/client/layout/site.tpl.html'
+                        templateUrl: '/client/layout/site.tpl.html',
+                        controller: 'siteController as siteCtrl',
                     }
                 }
             })

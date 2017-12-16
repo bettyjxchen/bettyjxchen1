@@ -7,24 +7,6 @@
 
     function RouteConfig($stateProvider) {
         $stateProvider
-            .state('site.home', {
-                url: '/home',
-                views: {
-                    'content': {
-                        templateUrl: '/client/site/home/home.html',
-                        controller: 'homeController as homeCtrl'
-                    }
-                }
-            })
-            .state('site.about', {
-                url: '/about',
-                views: {
-                    'content@site': {
-                        templateUrl: 'client/site/about/about.html',
-                        controller: 'aboutController as aboutCtrl'
-                    }
-                }
-            })
             .state('site.code', {
                 url: '/code',
                 views: {
@@ -40,6 +22,15 @@
                     'content@site': {
                         templateUrl: 'client/site/works/works.html',
                         controller: 'worksController as worksCtrl'
+                    }
+                }
+            })
+            .state('site.gallery', {
+                url: '/gallery',
+                views: {
+                    'content@site': {
+                        templateUrl: 'client/site/gallery/gallery.html',
+                        controller: 'galleryController as galleryCtrl'
                     }
                 }
             })

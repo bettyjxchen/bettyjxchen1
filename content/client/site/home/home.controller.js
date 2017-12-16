@@ -4,13 +4,15 @@
         .module('client.site')
         .controller('homeController', HomeController)
 
-    HomeController.$inject = []
+    HomeController.$inject = ['$window', '$timeout']
 
-    function HomeController() {
+    function HomeController($window, $timeout) {
         var vm = this
+        
         function init() {
-
+            $timeout(() => $window.App.init())
         }
+
     }
 
 
