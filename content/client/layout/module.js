@@ -11,7 +11,6 @@
         $stateProvider
             .state('site', {
                 // abstract: true,
-                url: '/',
                 views: {
                     'root': {
                         templateUrl: '/client/layout/site.tpl.html'
