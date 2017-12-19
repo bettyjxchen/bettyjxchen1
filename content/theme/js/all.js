@@ -9,7 +9,6 @@
     $(window).load(function(){
         
         // Page loader
-        
         $("body").imagesLoaded(function(){
             $(".page-loader div").fadeOut();
             $(".page-loader").delay(200).fadeOut("slow");
@@ -32,24 +31,55 @@
         
     });
     
-    $(document).ready(function(){
-        
+    window.themeAll = function (){
         $(window).trigger("resize");            
-        init_classic_menu();
-        init_fullscreen_menu();
         init_side_panel();
+
         init_lightbox();
         init_parallax();
         init_shortcodes();
+
         init_tooltips();
         init_counters();
         init_team();
+
         initPageSliders();
         init_map();
         init_wow();
+
+        init_masonry();
+        init_classic_menu();
+        init_fullscreen_menu();
+
+        var pageSection = $(".home-section, .page-section, .small-section, .split-section");
+        pageSection.each(function(indx){
+            
+            if ($(this).attr("data-background")){
+                $(this).css("background-image", "url(" + $(this).data("background") + ")");
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        init_classic_menu();
+        init_fullscreen_menu();
+        init_parallax();
+        
+        init_side_panel();
+        init_lightbox();
+        init_shortcodes();
+
+        init_tooltips();
+        init_counters();
+        init_team();
+
+        initPageSliders();
+        init_map();
+        init_wow();
+
         init_masonry();
     });
-    
+
     $(window).resize(function(){
         
         init_classic_menu_resize();

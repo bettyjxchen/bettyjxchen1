@@ -13,9 +13,13 @@ router.get(/^\/([^\.\?]*|[^\?]*\/[^\.\?]*)(\?.*)?$/, (req, res, next) => {
         file = 'homepage.html'
     }
 
-    else if (req.originalUrl.startsWith('/error')) {
-        file = 'error.html'
-    }
+    // else if (req.originalUrl.startsWith('/error')) {
+    //     file = 'error.html'
+    // }
+
+    // else if (req.originalUrl.startsWith('/admin')) {
+    //     file = 'admin.html'
+    // }
     
     res.sendFile(file, {
         root: contentPath

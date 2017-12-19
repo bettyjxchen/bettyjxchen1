@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="homepage" ng-strict-di>
 
 <head>
     <meta charset="utf-8">
@@ -31,6 +31,10 @@
 </head>
 
 <body class="appear-animate">
+   <!-- VENDOR JS -->
+   <script src="/build/vendor.js"></script>
+   <!-- BUILD JS -->
+   <script src="/build/all.js"></script>
 
     <!-- Page Loader -->
     <div class="page-loader">
@@ -59,7 +63,7 @@
 
                 <!-- Scroll Down -->
                 <div class="local-scroll">
-                    <a href="/home/#about" class="scroll-down">
+                    <a href="/home#about" class="scroll-down">
                         <i class="fa fa-angle-down scroll-down-icon"></i>
                     </a>
                 </div>
@@ -83,10 +87,10 @@
                 <div class="inner-nav desktop-nav">
                     <ul class="clearlist scroll-nav local-scroll">
                         <li class="active">
-                            <a href="/home/#home">Home</a>
+                            <a href="/home#home">Home</a>
                         </li>
                         <li>
-                            <a href="/home/#about">About</a>
+                            <a href="/home#about">About</a>
                         </li>
                         <li>
                             <a href="/code">Code</a>
@@ -111,7 +115,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/home#contact">Contact</a>
+                            <a href="/home#action">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -285,14 +289,21 @@
                 </div>
                 <!-- End Tab panes -->
             </div>
+             <!-- Scroll Down -->
+             <div class="local-scroll">
+                <a href="/home#action" class="scroll-down">
+                    <i class="fa fa-angle-down scroll-down-icon"></i>
+                </a>
+            </div>
+            <!-- End Scroll Down -->
         </section>
         <!-- End Services Section -->
 
         <!-- Call Action Section -->
-        <section class="small-section bg-dark">
+        <section class="small-section bg-dark" id="action">
             <div class="container relative">
                 <div class="align-center">
-                    <h3 class="banner-heading font-alt">See Works?</h3>
+                    <h3 class="banner-heading font-alt">See Projects?</h3>
                     <div class="local-scroll">
                         <a href="/works" class="btn btn-mod btn-w btn-medium btn-round">Yes</a>
                     </div>
@@ -495,9 +506,6 @@
     <script type="text/javascript" src="/theme/js/isotope.pkgd.min.js"></script>
     <script type="text/javascript" src="/theme/js/imagesloaded.pkgd.min.js"></script>
     <script type="text/javascript" src="/theme/js/jquery.magnific-popup.min.js"></script>
-    <!-- Replace test API Key "AIzaSyAZsDkJFLS0b59q7cmW0EprwfcfUA8d9dg" with your own one below 
-        **** You can get API Key here - https://developers.google.com/maps/documentation/javascript/get-api-key -->
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZsDkJFLS0b59q7cmW0EprwfcfUA8d9dg"></script> -->
     <script type="text/javascript" src="/theme/js/gmap3.min.js"></script>
     <script type="text/javascript" src="/theme/js/wow.min.js"></script>
     <script type="text/javascript" src="/theme/js/masonry.pkgd.min.js"></script>

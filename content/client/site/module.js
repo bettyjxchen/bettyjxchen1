@@ -43,6 +43,15 @@
                     }
                 }
             })
+            .state('site.login', {
+                url: '/login',
+                views: {
+                    'content@site': {
+                        templateUrl: 'client/site/login/login.html',
+                        controller: 'loginController as loginCtrl'
+                    }
+                }
+            })
 
     }
 
