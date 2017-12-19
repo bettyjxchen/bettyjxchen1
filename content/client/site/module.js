@@ -25,15 +25,6 @@
                     }
                 }
             })
-            .state('site.gallery', {
-                url: '/gallery',
-                views: {
-                    'content@site': {
-                        templateUrl: 'client/site/gallery/gallery.html',
-                        controller: 'galleryController as galleryCtrl'
-                    }
-                }
-            })
 
     }
 

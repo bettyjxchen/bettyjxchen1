@@ -1,5 +1,5 @@
 /* global angular */
-(function() {
+(function () {
     'use strict'
 
     angular.module('client.layout', ['ui.router'])
@@ -9,9 +9,19 @@
 
     function RouteConfig($stateProvider) {
         $stateProvider
+            .state('home', {
+                // abstract: true,
+                url: '/home',
+                views: {
+                    'root': {
+                        templateUrl: '/homepage.html',
+                        // controller: 'homepageController as homepageCtrl',
+                    }
+                }
+            })
             .state('site', {
                 // abstract: true,
-                url: '/site',
+                // url: '/',
                 views: {
                     'root': {
                         templateUrl: '/client/layout/site.tpl.html',
@@ -19,5 +29,6 @@
                     }
                 }
             })
+
     }
 })()

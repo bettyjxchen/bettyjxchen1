@@ -7,7 +7,13 @@ const contentPath = path.join(__dirname, '../../content')
 
 // route to handle all angular client state URL requests (regex matches URL with no file extension, query OK)
 router.get(/^\/([^\.\?]*|[^\?]*\/[^\.\?]*)(\?.*)?$/, (req, res, next) => {
-    res.sendFile('index.html', {
+    let file = "index.html"
+    
+    if (req.originalUrl.startsWith("/home")) {
+        file = 'homepage.html'
+    }
+    
+    res.sendFile(file, {
         root: contentPath
     })
 })
