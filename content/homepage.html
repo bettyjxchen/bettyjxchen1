@@ -26,9 +26,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- ================== END BASE CSS STYLE ================== -->
 
-
     <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
-
     <!-- ================== END PAGE LEVEL STYLE ================== -->
 </head>
 
@@ -66,6 +64,7 @@
                     </a>
                 </div>
                 <!-- End Scroll Down -->
+
             </div>
         </section>
 
@@ -94,10 +93,26 @@
                             <a href="/code">Code</a>
                         </li>
                         <li>
-                            <a href="site.works">Works</a>
+                            <a href="/works" class="mn-has-sub active">Works
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <!-- Sub Multilevel -->
+                            <ul class="mn-sub mn-has-multi">
+                                <!-- Sub Column -->
+                                <li class="mn-sub-multi">
+                                    <ul>
+                                        <li>
+                                            <a ui-sref="/works/laso">Laso Concepts</a>
+                                        </li>
+                                        <li>
+                                            <a href="/works/snapple">Snapple Campaign</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="/home/#contact">Contact</a>
+                            <a href="/home#contact">Contact</a>
                         </li>
                     </ul>
                 </div>

@@ -25,6 +25,24 @@
                     }
                 }
             })
+            .state('site.snapple', {
+                url: '/works/snapple',
+                views: {
+                    'content@site': {
+                        templateUrl: 'client/site/works/snapple/snapple.html',
+                        controller: 'snappleController as snappleCtrl'
+                    }
+                }
+            })
+            .state('site.laso', {
+                url: '/works/laso',
+                views: {
+                    'content@site': {
+                        templateUrl: 'client/site/works/laso/laso.html',
+                        controller: 'lasoController as lasoCtrl'
+                    }
+                }
+            })
 
     }
 
