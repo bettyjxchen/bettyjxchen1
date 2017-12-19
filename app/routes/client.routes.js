@@ -9,8 +9,12 @@ const contentPath = path.join(__dirname, '../../content')
 router.get(/^\/([^\.\?]*|[^\?]*\/[^\.\?]*)(\?.*)?$/, (req, res, next) => {
     let file = "index.html"
     
-    if (req.originalUrl.startsWith("/home")) {
+    if (req.originalUrl.startsWith('/home')) {
         file = 'homepage.html'
+    }
+
+    else if (req.originalUrl.startsWith('/error')) {
+        file = 'error.html'
     }
     
     res.sendFile(file, {
