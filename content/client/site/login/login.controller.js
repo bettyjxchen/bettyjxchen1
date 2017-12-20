@@ -16,19 +16,21 @@
         vm.login = _login
 
         init()
-        
+
         function init() {
             // $timeout(() => $window.App().init())
             $window.themeAll()
         }
 
         function _login() {
-            if (vm.username === "bettyjxchen" && vm.password === "hellobetty1117!") {
+            if (vm.username == "bettyjxchen" && vm.password == "hellobetty") {
+                console.log('match')
                 clearForm()
-                $state.go("admin.home")
+                $window.location.href = "/admin"
             }
             else {
-               vm.loginError = true
+                vm.loginError = true
+                clearForm()
             }
         }
 

@@ -37,4 +37,23 @@
                 controller: 'homeController as homeCtrl'
             })
     }
-})()
+})();
+
+/* global angular */
+(function () {
+    'use strict'
+
+    angular.module('admin.layout', ['ui.router'])
+    angular.module('admin.layout').config(RouteConfig)
+
+    RouteConfig.$inject = ['$stateProvider']
+
+    function RouteConfig($stateProvider) {
+        $stateProvider
+            .state('admin', {
+                url: '/admin',
+                templateUrl: '/admin.html',
+                controller: 'adminController as adminCtrl'
+            })
+    }
+})();

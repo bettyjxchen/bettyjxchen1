@@ -2,7 +2,7 @@
 /* https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#application-structure */
 
 (function () {
-    ["client", "homepage"].forEach(function (appName) {
+    ["client", "homepage", "admin"].forEach(function (appName) {
         'use strict';
         angular.module(appName, [
             // 3rd party
@@ -46,7 +46,6 @@
                 $window.location.reload()
             });
             $locationProvider.html5Mode(true);
-
             
         }
     })

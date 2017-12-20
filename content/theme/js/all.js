@@ -969,6 +969,10 @@ function initWorkFilter() {
     (function ($) {
         "use strict";
         var isotope_mode;
+        // Projects filtering
+        var fselector = 0;
+        var work_grid = $("#work-grid, #isotope");
+       
         if (work_grid.hasClass("masonry")) {
             isotope_mode = "masonry";
         } else {
