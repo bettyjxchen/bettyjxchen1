@@ -52,6 +52,7 @@
         $stateProvider
             .state('admin', {
                 url: '/admin',
+                abstract: true,
                 templateUrl: '/admin.html',
                 controller: 'adminController as adminCtrl'
             })

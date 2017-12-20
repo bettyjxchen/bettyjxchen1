@@ -7,21 +7,15 @@
 
     function RouteConfig($stateProvider) {
         $stateProvider
-            // .state('admin', {
-            //     url: '/admin',
-            //     templateUrl: 'client/site/code/code.html',
-            //     controller: 'codeController as codeCtrl'
-
-            //     views: {
-            //         'content@site': {
-            //             templateUrl: 'client/site/code/code.html',
-            //             controller: 'codeController as codeCtrl'
-            //         }
-            //     }
-            // })
-           
+            .state('admin.messages', {
+                url: '/messages',
+                views: {
+                    'content@admin': {
+                        templateUrl: 'client/admin/messages/messages.html',
+                        controller: 'messagesController as msgCtrl'
+                    }
+                }
+            })
     }
-
-
 
 })();
