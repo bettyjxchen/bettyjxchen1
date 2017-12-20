@@ -15,8 +15,11 @@
 
         vm.login = _login
 
+        init()
+        
         function init() {
-            $timeout(() => $window.App().init())
+            // $timeout(() => $window.App().init())
+            $window.themeAll()
         }
 
         function _login() {

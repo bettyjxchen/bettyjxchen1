@@ -32,6 +32,7 @@
         // $(window).trigger("resize");
         init_side_panel();
         initWorkFilter();
+        // init_scroll_navigate();
 
         init_lightbox();
         init_parallax();
@@ -78,6 +79,8 @@
 
         init_masonry();
         initWorkFilter();
+        // init_scroll_navigate();
+
 
     });
 
@@ -86,6 +89,7 @@
         init_side_panel_resize()
         js_height_init();
         split_height_init();
+        // init_scroll_navigate();
     });
 
 

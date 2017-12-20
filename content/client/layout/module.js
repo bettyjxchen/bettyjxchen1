@@ -33,12 +33,8 @@
         $stateProvider
             .state('home', {
                 url: '/home',
-                views: {
-                    'root': {
-                        templateUrl: '/homepage.html',
-                    }
-                }
+                templateUrl: '/homepage.html',
+                controller: 'homeController as homeCtrl'
             })
-        
     }
 })()

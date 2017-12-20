@@ -9,8 +9,11 @@
     function SiteController($window, $timeout) {
         var vm = this
 
+        init()
+
         function init() {
-            $timeout(() => $window.App().init())
+            // $window.themeAll()
+            // $timeout(() => $window.App().init())
         }
 
     }

@@ -9,8 +9,11 @@
     function SnappleController($window, $timeout) {
         var vm = this
 
+        init()
+
         function init() {
-            $timeout(() => $window.App().init())
+            // $timeout(() => $window.App().init())
+            $window.themeAll()
         }
 
     }
