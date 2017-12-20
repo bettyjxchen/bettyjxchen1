@@ -1,6 +1,16 @@
-/* global angular */
 (function () {
-    'use strict';
+    'use strict'
 
-    angular.module('client.crud', [])
+    angular.module('client.crud', ['ui.router'])
+    angular.module('client.crud').config(RouteConfig)
+
+    RouteConfig.$inject = ['$stateProvider']
+
+    function RouteConfig($stateProvider) {
+      
+        
+    }
+
+
+
 })();

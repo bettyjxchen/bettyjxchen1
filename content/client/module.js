@@ -2,43 +2,52 @@
 /* https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#application-structure */
 
 (function () {
-    'use strict';
-    angular.module('client', [
-        // 3rd party
-        'ui.router',
-        'ui.bootstrap',
+    ["client", "homepage", "admin"].forEach(function (appName) {
+        'use strict';
+        angular.module(appName, [
+            // 3rd party
+            'ui.router',
+            'ui.bootstrap',
+    
+            //base / common
+            `${appName}.layout`,
+            'client._common',
+    
+            //services
+            'client.authentication',
+            'client.services',
+    
+            //views /controllers
+            'client.crud',
+            'client.hackers',
+            'client.site',
+            'client.admin'
+        ])
+    
+        angular.module(appName)
+            .config(RouteConfig)
+            .run(StateErrorHandler)
+    
+        StateErrorHandler.$inject = ['$rootScope', '$log', '$state']
+    
+        function StateErrorHandler($rootScope, $log, $state) {
+            $rootScope.$on('$stateChangeError', info => $log.log(info))
+        }
+    
+        RouteConfig.$inject = [
+            '$stateProvider',
+            '$urlRouterProvider',
+            '$locationProvider'
+        ];
 
-        //base / common
-        'client.layout',
-        'client._common',
+        function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+            $urlRouterProvider.otherwise(($injector, $location) => {
+                var $window = $injector.get('$window')
+                $window.location.reload()
+            });
+            $locationProvider.html5Mode(true);
+            
+        }
+    })
 
-        //services
-        'client.authentication',
-        'client.services',
-
-        //views /controllers
-        'client.crud',
-        'client.hackers'
-    ])
-
-    angular.module('client')
-        .config(RouteConfig)
-        .run(StateErrorHandler)
-
-    StateErrorHandler.$inject = ['$rootScope', '$log']
-
-    function StateErrorHandler($rootScope, $log) {
-        $rootScope.$on('$stateChangeError', info => $log.log(info))
-    }
-
-    RouteConfig.$inject = [
-        '$stateProvider',
-        '$urlRouterProvider',
-        '$locationProvider'
-    ];
-
-    function RouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise('/hackers/list');
-        $locationProvider.html5Mode(true);
-    }
 })();

@@ -3,7 +3,7 @@ const app = express()
 const router = require('./app/routes')
 
 const mongo = require('./app/mongodb')
-const configMongoDB = require('./config/mongodb')
+const configMongoDB = require('./app/config/mongodb')
 
 const dotenv = require('dotenv')
 const bodyParser = require('body-parser')
