@@ -1,3 +1,5 @@
+import { fail } from "assert";
+
 /* global angular */
 (function () {
     'use strict'
@@ -53,8 +55,8 @@
             .state('admin', {
                 url: '/admin',
                 abstract: true,
-                templateUrl: '/admin.html',
-                controller: 'adminController as adminCtrl'
+                templateUrl: '/admin.html'
             })
     }
+
 })();

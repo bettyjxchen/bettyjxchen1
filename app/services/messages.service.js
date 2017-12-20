@@ -12,7 +12,7 @@ module.exports = {
 }
 
 function _readAll() {
-    return conn.conn().collection('messages').find().toArray()
+    return conn.conn().collection('messages').find({ 'dateDeactivated': null }).toArray()
         .then( messages => {
             for (let i = 0; i < messages.length; i++) {
                 let message = messages[i]
@@ -23,7 +23,7 @@ function _readAll() {
 }
 
 function _readById(id) {
-    return conn.conn().collection('messages').findOne({ _id: new ObjectId(id) })
+    return conn.conn().collection('messages').findOne({ _id: new ObjectId(id), 'dateDeactivated': null })
         .then(message => {
             message._id = message._id.toString() 
             return message
@@ -31,21 +31,31 @@ function _readById(id) {
 }
 
 function _create(model) {
-    return conn.conn().collection('messages').insert(model)
+    let doc = {
+       name: model.name,
+       email: model.email,
+       message: model.message,
+       dateCreated: new Date()
+    }
+    return conn.conn().collection('messages').insert(doc)
         .then(result => {
-            console.log(result)
             return result.insertedIds[0].toString()
         }) 
 }
 
-function _update(id, doc) {
-    doc._id = new ObjectId(doc._id)
+function _update(id, model) {
+    let doc = {
+        name: model.name,
+        email: model.email,
+        message: model.message,
+        dateModified: new Date(),
+     }
 
-    return conn.conn().collection('messages').replaceOne( { _id: new ObjectId(id) }, doc )
+    return conn.conn().collection('messages').updateOne( { _id: new ObjectId(id) }, { $set: doc } )
         .then(result => Promise.resolve()) 
 }
 
 function _delete(id) {
-    return conn.conn().collection('messages').deleteOne({ _id: new ObjectId(id) })
+    return conn.conn().collection('messages').updateOne({ _id: new ObjectId(id) }, { $currentDate: { 'dateModified': true, 'dateDeactivated': true } })
         .then(result => Promise.resolve()) 
 }

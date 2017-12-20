@@ -40,7 +40,6 @@
 
     <!-- Start Container Section -->
     <section id="container">
-
         <!-- Header Navbar Start -->
         <header class="header black-bg">
             <!-- Toggle -->
@@ -48,13 +47,13 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!-- Logout -->
-            <!-- <div class="top-menu">
+            <div class="top-menu">
                 <ul class="nav pull-right top-menu">
                     <li>
-                        <a class="logout" href="/home">Logout</a>
+                        <a class="logout_btn font-size" href="/home">Logout</a>
                     </li>
                 </ul>
-            </div> -->
+            </div>
         </header>
         <!-- Header Navbar End -->
 
@@ -70,29 +69,29 @@
                     <h5 class="centered">Betty Chen</h5>
                     <!-- Dashboard -->
                     <li class="mt">
-                        <a class="active" href="/admin">
+                        <a class="active" href="/admin/home">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <!-- Data Management -->
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="/admin/data">
                             <i class="fa fa-th"></i>
-                            <span>Data Tables</span>
+                            <span>Metrics</span>
                         </a>
                         <ul class="sub">
                             <li>
-                                <a href="basic_table.html">Basic Table</a>
+                                <a href="basic_table.html">Visits</a>
                             </li>
                             <li>
-                                <a href="responsive_table.html">Responsive Table</a>
+                                <a href="responsive_table.html">Downloads</a>
                             </li>
                         </ul>
                     </li>
                     <!-- Messages -->
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="/admin/messages">
                             <i class="fa fa-reply-all"></i>
                             <span>Messages</span>
                         </a>
@@ -101,6 +100,10 @@
             </div>
         </aside>
         <!-- Main Sidebar Nav End -->
+
+        <!-- Main Content Start -->
+        <div ui-view="content"></div>
+        <!-- Main Content End -->
 
         <!-- Footer Start -->
         <footer>
@@ -111,7 +114,6 @@
             </div>
         </footer>
         <!-- Footer End -->
-
     </section>
 
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->

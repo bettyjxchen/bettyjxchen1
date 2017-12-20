@@ -3,8 +3,9 @@ Joi.objectId = require('joi-objectid')(Joi)
 
 const schema = {
     name: Joi.string().required(),
+    email: Joi.string().required(),
     message: Joi.string().required(),
-    // _id: Joi.objectId(),
+    _id: Joi.objectId(),
 }
 
 module.exports = Joi.object().keys(schema)

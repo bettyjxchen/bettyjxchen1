@@ -26,7 +26,7 @@
             if (vm.username == "bettyjxchen" && vm.password == "hellobetty") {
                 console.log('match')
                 clearForm()
-                $window.location.href = "/admin"
+                $window.location.href = "/admin/home"
             }
             else {
                 vm.loginError = true
