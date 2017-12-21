@@ -28,11 +28,14 @@
             .config(RouteConfig)
             .run(StateErrorHandler)
 
-        StateErrorHandler.$inject = ['$rootScope', '$log', '$state', '$window']
+        StateErrorHandler.$inject = ['$rootScope', '$log', '$state', '$window', '$transitions']
 
-        function StateErrorHandler($rootScope, $log, $state, $window) {
+        function StateErrorHandler($rootScope, $log, $state, $window, $transitions) {
             $rootScope.$on('$stateChangeError', info => $log.log(info))
-            $rootScope.$on('$stateChangeSuccess', () => $window.localStorage.removeItem("reload"))
+            // $rootScope.$on('$stateChangeSuccess', () => { console.log('test')
+            // $window.localStorage.removeItem("reload") })
+            $transitions.onSuccess({}, (trans) => $window.localStorage.removeItem("reload"))
+
         }
 
         RouteConfig.$inject = [
@@ -45,8 +48,9 @@
             $urlRouterProvider.otherwise(($injector, $location) => {
                 var $window = $injector.get('$window')
                 if ($window.localStorage.getItem("reload")) {
-                    $window.location.href = "/error"
                     $window.localStorage.removeItem("reload")
+                    $window.location.href = "/error"
+
                 }
                 else {
                     $window.localStorage.setItem("reload", "true")

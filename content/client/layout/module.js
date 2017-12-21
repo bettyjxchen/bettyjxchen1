@@ -64,7 +64,6 @@
                 views: {
                     "content": {
                         controller: ['$state', function ($state) {
-                            debugger
                             $state.go('admin.home')
                         }],
                     }
