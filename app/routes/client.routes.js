@@ -9,7 +9,7 @@ const contentPath = path.join(__dirname, '../../content')
 router.get(/^\/([^\.\?]*|[^\?]*\/[^\.\?]*)(\?.*)?$/, (req, res, next) => {
     let file = "homepage.html"
 
-    if (req.originalUrl.startsWith('/code') || req.originalUrl.startsWith('/works')) {
+    if (req.originalUrl.startsWith('/code') || req.originalUrl.startsWith('/works') || req.originalUrl.startsWith('/login')) {
         file = 'index.html'
     }
 
