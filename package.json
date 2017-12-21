@@ -1,6 +1,6 @@
 {
   "name": "node-angular-starter",
-  "main": "server.js",
+  "main": "index.js",
   "version": "2.0.0",
   "scripts": {
     "heroku-postbuild": "gulp prod",
