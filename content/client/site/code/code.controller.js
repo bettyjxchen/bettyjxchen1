@@ -4,16 +4,23 @@
         .module('client.layout')
         .controller('codeController', CodeController)
 
-    CodeController.$inject = ['$window', '$timeout']
+    CodeController.$inject = ['$window', '$timeout', '$location', '$anchorScroll']
 
-    function CodeController($window, $timeout) {
+    function CodeController($window, $timeout, $location, $anchorScroll) {
         var vm = this
 
-        init() 
+        init()
 
         function init() {
             // $timeout($window.themeAll)
             $window.themeAll()
+        }
+
+        function _scrollToTop() {
+            $timeout(() => {
+                $location.hash('')
+                $anchorScroll()
+            })
         }
 
     }
