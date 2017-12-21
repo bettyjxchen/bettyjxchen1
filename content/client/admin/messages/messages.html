@@ -24,25 +24,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr ng-repeat="message in msgCtrl.messages | orderBy: -dateCreated">
                                 <td>
-                                    <a href="basic_table.html#">
-                                        Dashgum ext
+                                    <a ui-sref="admin.messages.detail({id:message._id})">
+                                        {{message.name}}
                                     </a>
                                 </td>
-                                <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                <td>22000.50$ </td>
+                                <td class="hidden-phone">{{message.message}}</td>
+                                <td>{{message.dateCreated | date: 'short' }}</td>
                                 <td>
-                                    <span class="label label-success label-mini">Paid</span>
+                                    <span class="label label-success label-mini" ng-show="message.isUnread">Unread</span>
+                                    <span class="label label-default label-mini" ng-show="!message.isUnread">Read</span>
                                 </td>
+                                <!-- buttons -->
                                 <td>
-                                    <button class="btn btn-success btn-xs">
-                                        <i class="fa fa-check"></i>
-                                    </button>
-                                    <button class="btn btn-primary btn-xs">
+                                    <!-- edit -->
+                                    <button class="btn btn-primary btn-xs pull-right btn-margin">
                                         <i class="fa fa-pencil"></i>
                                     </button>
-                                    <button class="btn btn-danger btn-xs">
+                                    <!-- delete -->
+                                    <button class="btn btn-danger btn-xs pull-right btn-margin" ng-click="msgCtrl.delete($index)">
                                         <i class="fa fa-trash-o "></i>
                                     </button>
                                 </td>
@@ -50,10 +51,11 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- /content-panel -->
+                <!-- /content-panel end -->
             </div>
         </div>
-        <!-- /row -->
+        <!-- /row end-->
     </section>
 </section>
 <!-- Main Content End -->
+

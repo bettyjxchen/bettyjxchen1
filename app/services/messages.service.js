@@ -35,7 +35,8 @@ function _create(model) {
        name: model.name,
        email: model.email,
        message: model.message,
-       dateCreated: new Date()
+       isUnread: true,
+       dateCreated: new Date(),
     }
     return conn.conn().collection('messages').insert(doc)
         .then(result => {
@@ -48,7 +49,8 @@ function _update(id, model) {
         name: model.name,
         email: model.email,
         message: model.message,
-        dateModified: new Date(),
+        isUnread: model.isUnread,
+        dateModified: new Date()
      }
 
     return conn.conn().collection('messages').updateOne( { _id: new ObjectId(id) }, { $set: doc } )

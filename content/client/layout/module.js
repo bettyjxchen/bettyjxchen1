@@ -1,5 +1,3 @@
-import { fail } from "assert";
-
 /* global angular */
 (function () {
     'use strict'
@@ -45,7 +43,7 @@ import { fail } from "assert";
 (function () {
     'use strict'
 
-    angular.module('admin.layout', ['ui.router'])
+    angular.module('admin.layout', ['ui.router', 'client.admin'])
     angular.module('admin.layout').config(RouteConfig)
 
     RouteConfig.$inject = ['$stateProvider']
@@ -55,7 +53,15 @@ import { fail } from "assert";
             .state('admin', {
                 url: '/admin',
                 abstract: true,
-                templateUrl: '/admin.html'
+                // views: {
+                //     "content": {
+                //         controller: function () {
+                //             console.log('hi')
+                //         },
+                //         template: "<h1>hi</h1>"
+                //     }
+                // }
+
             })
     }
 

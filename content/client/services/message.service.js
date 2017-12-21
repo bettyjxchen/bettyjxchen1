@@ -26,7 +26,7 @@
                 .catch(onError)
         }
 
-        function readById(id) {
+        function _readById(id) {
             return $http.get(`/api/messages/${id}`)
                 .then(dateChange =>
                     convertDate(dateChange)
@@ -34,13 +34,13 @@
                 .catch(onError)
         }
 
-        function create(data) {
+        function _create(data) {
             return $http.post('/api/messages', data)
                 .then(xhrSuccess)
                 .catch(onError)
         }
 
-        function update(data) {
+        function _update(data) {
             return $http.put(`/api/messages/${data._id}`, data)
                 .then(xhrSuccess)
                 .catch(onError)
