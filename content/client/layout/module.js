@@ -34,7 +34,10 @@
             .state('home', {
                 url: '/home',
                 templateUrl: '/homepage.html',
-                controller: 'homeController as homeCtrl'
+                // controller: 'homeController as homeCtrl'
+                controller: function() {
+                    console.log('hi')
+                }
             })
     }
 })();

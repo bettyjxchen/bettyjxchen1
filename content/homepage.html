@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="homepage" ng-strict-di>
+<html ng-app="homepage" ng-strict-di ng-controller="homepageController as homeCtrl">
 
 <head>
     <meta charset="utf-8">
@@ -72,9 +72,9 @@
             <div class="full-wrapper relative clearfix">
                 <!-- Logo ( * your text or image into link tag *) -->
                 <div class="nav-logo-wrap local-scroll">
-                    <a href="#top" class="logo">
-                        <!-- <img src="/theme/images/logo-white.png" alt="" /> -->
-                    </a>
+                    <!-- <a class="logo">
+                        <img src="/theme/images/clients-logos/logo.png" alt="" />
+                    </a> -->
                 </div>
                 <div class="mobile-nav">
                     <i class="fa fa-bars"></i>
@@ -175,10 +175,10 @@
                                 <div class="col-md-4 mb-md-40 mb-xs-30">
                                     <blockquote class="mb-0">
                                         <p>
-                                            All that is valuable in human society depends upon the opportunity for development accorded the individual.
+                                            To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.
                                         </p>
                                         <footer>
-                                            Albert Einstein
+                                            Ralph Waldo Emerson
                                         </footer>
                                     </blockquote>
                                 </div>
@@ -373,66 +373,50 @@
                 <!-- Contact Form -->
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-
-                        <form class="form contact-form" id="contact_form">
+                        <form class="form contact-form" id="contact_form" novalidate>
                             <div class="clearfix">
-
+                                <!-- Left -->
                                 <div class="cf-left-col">
-
                                     <!-- Name -->
                                     <div class="form-group">
-                                        <input type="text" name="name" id="name" class="input-md round form-control" placeholder="Name" pattern=".{3,100}" required>
+                                        <input type="text" name="name" id="name" class="input-md round form-control" placeholder="Name" pattern=".{3,100}" required
+                                            ng-model="homeCtrl.formData.name">
                                     </div>
 
                                     <!-- Email -->
                                     <div class="form-group">
-                                        <input type="email" name="email" id="email" class="input-md round form-control" placeholder="Email" pattern=".{5,100}" required>
+                                        <input type="email" name="email" id="email" class="input-md round form-control" placeholder="Email" pattern=".{5,100}" required
+                                            ng-model="homeCtrl.formData.email">
                                     </div>
-
                                 </div>
-
+                                <!-- Right -->
                                 <div class="cf-right-col">
-
                                     <!-- Message -->
                                     <div class="form-group">
-                                        <textarea name="message" id="message" class="input-md round form-control" style="height: 84px;" placeholder="Message"></textarea>
+                                        <textarea name="message" id="message" class="input-md round form-control" style="height: 84px;" placeholder="Message" ng-model="homeCtrl.formData.message"></textarea>
                                     </div>
-
                                 </div>
-
                             </div>
 
                             <div class="clearfix">
-
                                 <div class="cf-left-col">
-
                                     <!-- Inform Tip -->
                                     <div class="form-tip pt-20">
                                         <i class="fa fa-info-circle"></i> All fields are required
                                     </div>
-
                                 </div>
-
                                 <div class="cf-right-col">
-
                                     <!-- Send Button -->
                                     <div class="align-right pt-10">
-                                        <button class="submit_btn btn btn-mod btn-medium btn-round" id="submit_btn">Submit Message</button>
+                                        <button class="submit_btn btn btn-mod btn-medium btn-round" ng-click="homeCtrl.submitMessage()">Submit Message</button>
                                     </div>
-
                                 </div>
-
                             </div>
-
-
-
                             <div id="result"></div>
                         </form>
-
                     </div>
                 </div>
                 <!-- End Contact Form -->
-
             </div>
         </section>
         <!-- End Contact Section -->
@@ -507,7 +491,7 @@
     <script type="text/javascript" src="/theme/js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="/theme/js/jquery.simple-text-rotator.min.js"></script>
     <script type="text/javascript" src="/theme/js/all.js"></script>
-    <script type="text/javascript" src="/theme/js/contact-form.js"></script>
+    <!-- <script type="text/javascript" src="/theme/js/contact-form.js"></script> -->
     <script type="text/javascript" src="/theme/js/jquery.ajaxchimp.min.js"></script>
     <!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
     <!-- ================== END PAGE LEVEL JS ================== -->

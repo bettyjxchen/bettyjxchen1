@@ -6,6 +6,7 @@
             <!-- Message -->
             <div class="col-lg-10">
                 <div class="form-panel">
+                    <button class="btn btn-default pull-right" ui-sref="admin.messages">Back</button>
                     <h4 class="mb">Message</h4>
                     <form class="form-horizontal style-form" method="get">
                         <!-- Email -->
@@ -39,6 +40,7 @@
                         </div>
                     </form>
                 </div>
+
             </div>
 
             <!-- Toggle -->
@@ -49,16 +51,17 @@
                     <div class="row mt">
                         <div class="col-sm-6 text-center">
                             <!-- If Read -->
-                            <!-- <div ng-show="!detailCtrl.message.isUnread" class="switch switch-square" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
+                            <div ng-show="!detailCtrl.message.isUnread" class="switch switch-square" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
                                 <input checked type="checkbox" />
-                            </div> -->
-                            <!-- If Unread -->
-                            <!-- <div ng-show="detailCtrl.message.isUnread" class="switch switch-square" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-                                <input ng-show="detailCtrl.message.isUnread" type="checkbox" />
-                            </div> -->
-                            <div data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-                                <input type="checkbox" ng-model="detailCtrl.message.isUnread" />
                             </div>
+                            <!-- If Unread -->
+                            <div ng-show="detailCtrl.message.isUnread" class="switch switch-square" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
+                                <input ng-show="detailCtrl.message.isUnread" type="checkbox" />
+                            </div>
+
+                            <!-- <div data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
+                                <input type="checkbox" ng-model="detailCtrl.message.isUnread" />
+                            </div> -->
 
                         </div>
                     </div>
