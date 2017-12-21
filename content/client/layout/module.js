@@ -31,8 +31,14 @@
 
     function RouteConfig($stateProvider) {
         $stateProvider
+            // .state('reload', {
+            //     url: '/',
+            //     controller: function() {
+            //         console.log('hi')
+            //     }
+            // })
             .state('home', {
-                url: '/home',
+                url: '/',
                 // templateUrl: '/homepage.html',
                 // controller: 'homeController as homeCtrl'
                 // controller: function() {

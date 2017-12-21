@@ -7,20 +7,20 @@ const contentPath = path.join(__dirname, '../../content')
 
 // route to handle all angular client state URL requests (regex matches URL with no file extension, query OK)
 router.get(/^\/([^\.\?]*|[^\?]*\/[^\.\?]*)(\?.*)?$/, (req, res, next) => {
-    let file = "index.html"
-    
-    if (req.originalUrl.startsWith('/home')) {
-        file = 'homepage.html'
-    }
+    let file = "homepage.html"
 
-    else if (req.originalUrl.startsWith('/admin')) {
+    // if (req.originalUrl.startsWith('/home')) {
+    //     file = 'homepage.html'
+    // }
+
+    if (req.originalUrl.startsWith('/admin')) {
         file = 'admin.html'
     }
 
     else if (req.originalUrl.startsWith('/error')) {
         file = 'error.html'
     }
-    
+
     res.sendFile(file, {
         root: contentPath
     })
@@ -31,7 +31,7 @@ router.get('*', express.static(contentPath, {
 }))
 
 // Handle Static File 404
-router.use(function(err, req, res, next) {
+router.use(function (err, req, res, next) {
     if (err) console.error
     res.sendStatus(404)
 })
