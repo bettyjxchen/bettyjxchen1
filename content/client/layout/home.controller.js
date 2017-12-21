@@ -20,7 +20,7 @@
         }
 
         function _submitMessage() {
-            console.log('hi')
+            console.log(vm.formData)
             return messageService.create(vm.formData)
                 .then(() => {
                     vm.formData = {}
