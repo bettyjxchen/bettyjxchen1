@@ -2,11 +2,11 @@
 
     angular
         .module('homepage.layout')
-        .controller('homeController', HomeController)
+        .controller('homepageController', HomepageController)
 
-    HomeController.$inject = ['messageService']
+    HomepageController.$inject = ['messageService']
 
-    function HomeController(messageService) {
+    function HomepageController(messageService) {
         var vm = this
 
         vm.formData = {}
@@ -20,6 +20,7 @@
         }
 
         function _submitMessage() {
+            console.log('hi')
             return messageService.create(vm.formData)
                 .then(() => {
                     vm.formData = {}
