@@ -61,15 +61,14 @@
         $stateProvider
             .state('admin', {
                 url: '/admin',
-                abstract: true,
-                // views: {
-                //     "content": {
-                //         controller: function () {
-                //             console.log('hi')
-                //         },
-                //         template: "<h1>hi</h1>"
-                //     }
-                // }
+                views: {
+                    "content": {
+                        controller: ['$state', function ($state) {
+                            debugger
+                            $state.go('admin.home')
+                        }],
+                    }
+                }
 
             })
     }
