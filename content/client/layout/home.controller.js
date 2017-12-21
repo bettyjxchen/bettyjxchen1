@@ -4,19 +4,18 @@
         .module('homepage.layout')
         .controller('homepageController', HomepageController)
 
-    HomepageController.$inject = ['messageService', '$timeout', '$location', '$anchorScroll']
+    HomepageController.$inject = ['messageService']
 
-    function HomepageController(messageService, $timeout, $location, $anchorScroll) {
+    function HomepageController(messageService) {
         var vm = this
 
         vm.formData = {}
+        vm.submitMessage = _submitMessage
 
         init()
 
-        vm.submitMessage = _submitMessage
-
         function init() {
-            _scrollToTop()   
+             
         }
 
         function _submitMessage() {
@@ -27,12 +26,6 @@
                 })
         }
 
-        function _scrollToTop() {
-            $timeout(() => {
-                $location.hash('')
-                $anchorScroll()
-            })
-        }
 
     }
 

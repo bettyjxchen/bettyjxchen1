@@ -6,7 +6,7 @@
 
     CodeController.$inject = ['$window', '$timeout', '$location', '$anchorScroll']
 
-    function CodeController($window, $timeout, $location, $anchorScroll) {
+    function CodeController($window, $timeout) {
         var vm = this
 
         init()
