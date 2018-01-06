@@ -3,6 +3,7 @@ const authenticate = require('../filters/authenticate')
 const clientRoutes = require('./client.routes')
 const hackersRoutes = require('./hackers.routes')
 const messagesRoutes = require('./messages.routes')
+const usersRoutes = require('./users.routes')
 
 
 module.exports = router
@@ -13,6 +14,7 @@ router.use(authenticate)
 // API routes (group routing modules here)
 router.use('/api/hackers', hackersRoutes)
 router.use('/api/messages', messagesRoutes)
+router.use('/api/users', usersRoutes)
 
 
 // API error handlers (API routes must be registered before this)

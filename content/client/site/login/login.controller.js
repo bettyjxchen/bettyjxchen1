@@ -9,11 +9,13 @@
     function LoginController($window, $timeout, $state) {
         var vm = this
 
-        vm.username = null
-        vm.password = null
         vm.loginError = false
+        vm.isError = false
+        vm.newUser = {}
+        vm.oldUser = {}
 
         vm.login = _login
+        vm.register = _register
 
         init()
 
@@ -23,20 +25,33 @@
         }
 
         function _login() {
-            if (vm.username == "bettyjxchen" && vm.password == "hellobetty") {
-                console.log('match')
+            if (vm.oldUser.username == "bettyjxchen" && vm.oldUser.password == "hellobetty") {
+                vm.isError = false
                 clearForm()
                 $window.location.href = "/admin/home"
             }
             else {
-                vm.loginError = true
+                vm.isError = true
                 clearForm()
             }
         }
 
+        function _register() {
+            if (vm.username == "bettyjxchen" && vm.password == "hellobetty") {
+                vm.isError = false
+                clearForm()
+                $window.location.href = "/admin/home"
+            }
+            else {
+                vm.isError = true
+                clearForm()
+            }
+        }
+
+
         function clearForm() {
-            vm.username = null
-            vm.password = null
+            vm.oldUser = {}
+            vm.newUser = {}
         }
 
     }

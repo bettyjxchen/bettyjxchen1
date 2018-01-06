@@ -27,10 +27,10 @@
         <div class="align-center mb-40 mb-xxs-30">
             <ul class="nav nav-tabs tpl-minimal-tabs">
                 <li class="active">
-                    <a href="#mini-one" data-toggle="tab">Login</a>
+                    <a href="#login" data-toggle="tab">Login</a>
                 </li>
                 <li>
-                    <a href="#mini-two" data-toggle="tab">Registration</a>
+                    <a href="#register" data-toggle="tab">Registration</a>
                 </li>
             </ul>
         </div>
@@ -38,68 +38,73 @@
 
         <!-- Tab panes -->
         <div class="tab-content tpl-minimal-tabs-cont section-text">
-            <div class="tab-pane fade in active" id="mini-one">
+            <div class="tab-pane fade in active" id="login">
                 <!-- Login Form -->
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
                         <form class="form contact-form" id="contact_form" novalidate>
+
                             <div class="clearfix">
                                 <!-- Username -->
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username" class="input-md round form-control" placeholder="Username" pattern=".{3,100}" ng-model="loginCtrl.username"
-                                        required>
+                                    <input type="text" name="username" id="username" class="input-md round form-control" placeholder="Username" pattern=".{3,100}"
+                                        ng-model="loginCtrl.oldUser.username" required>
                                 </div>
+
                                 <!-- Password -->
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password" pattern=".{5,100}" ng-model="loginCtrl.password"
-                                        required>
+                                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password" pattern=".{5,100}"
+                                        ng-model="loginCtrl.oldUser.password" required>
+                                </div>
+
+                                <!-- Error Message -->
+                                <div class="alert error" ng-show="loginCtrl.isError">
+                                    <i class="fa fa-lg  fa-times-circle"></i> Please enter valid login credentials.
                                 </div>
                             </div>
+
                             <div class="clearfix">
                                 <div class="cf-right-col">
-                                    <!-- Send Button -->
+                                    <!-- Login Button -->
                                     <div class="align-right" style="padding-left: 120px">
                                         <button class="submit_btn btn btn-mod btn-medium btn-round" id="login-btn" ng-click="loginCtrl.login()">Login</button>
                                     </div>
                                 </div>
                             </div>
+
                         </form>
                     </div>
                 </div>
                 <!-- End Login Form -->
             </div>
 
-            <div class="tab-pane fade" id="mini-two">
-                <!-- Registry Form -->
+            <div class="tab-pane fade" id="register">
+                <!-- Register Form -->
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
-
                         <form class="form contact-form" id="contact_form">
                             <div class="clearfix">
-
                                 <!-- Email -->
                                 <div class="form-group">
-                                    <input type="text" name="Email" id="Email" class="input-md round form-control" placeholder="Email" pattern=".{3,100}" required>
+                                    <input type="text" name="Email" id="Email" class="input-md round form-control" placeholder="Email" pattern=".{3,100}" required ng-model="loginCtrl.newUser.email">
                                 </div>
 
                                 <!-- Username -->
                                 <div class="form-group">
                                     <input type="text" name="username" id="username" class="input-md round form-control" placeholder="Username" pattern=".{3,100}"
-                                        required>
+                                        required ng-model="loginCtrl.newUser.username">
                                 </div>
 
                                 <!-- Password -->
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password" pattern=".{5,100}"
-                                        required>
+                                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password" pattern=".{5,100}" required ng-model="loginCtrl.newUser.password">
                                 </div>
 
                                 <!-- Re-enter Password -->
                                 <div class="form-group">
                                     <input type="password" name="re-password" id="re-password" class="input-md round form-control" placeholder="Re-enter Password"
-                                        pattern=".{5,100}" required>
+                                        pattern=".{5,100}" required ng-model="loginCtrl.newUser.password2">
                                 </div>
-
                             </div>
 
                             <!-- Send Button -->
@@ -111,10 +116,9 @@
 
                     </div>
                 </div>
-                <!-- End Registry Form -->
+                <!-- End Register Form -->
             </div>
         </div>
     </div>
 </section>
 <!-- End Section -->
-
