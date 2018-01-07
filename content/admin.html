@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="admin" ng-strict-di>
+<html lang="en" ng-app="admin" ng-strict-di ng-controller="adminController as adminCtrl">
 
 <head>
     <base href="/" />
@@ -50,7 +50,7 @@
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
                     <li>
-                        <a class="logout_btn font-size" href="/">Logout</a>
+                        <a class="logout_btn font-size" href="" ng-click="adminCtrl.logout()">Logout</a>
                     </li>
                 </ul>
             </div>

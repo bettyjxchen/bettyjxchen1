@@ -6,6 +6,7 @@ const schema = {
     email: Joi.string().required(),
     message: Joi.string().required(),
     _id: Joi.objectId(),
+    isRead: Joi.boolean()
 }
 
 module.exports = Joi.object().keys(schema)

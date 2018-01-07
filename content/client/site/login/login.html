@@ -42,24 +42,23 @@
                 <!-- Login Form -->
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
-                        <form class="form contact-form" id="contact_form" novalidate>
-
+                        <form class="form contact-form" id="contact_form" novalidate name="loginCtrl.loginForm">
                             <div class="clearfix">
                                 <!-- Username -->
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username" class="input-md round form-control" placeholder="Username" pattern=".{3,100}"
+                                    <input type="text" name="username" id="username" class="input-md round form-control" placeholder="Username" 
                                         ng-model="loginCtrl.oldUser.username" required>
                                 </div>
 
                                 <!-- Password -->
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password" pattern=".{5,100}"
+                                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password"
                                         ng-model="loginCtrl.oldUser.password" required>
                                 </div>
 
                                 <!-- Error Message -->
-                                <div class="alert error" ng-show="loginCtrl.isError">
-                                    <i class="fa fa-lg  fa-times-circle"></i> Please enter valid login credentials.
+                                <div class="alert error" ng-show="loginCtrl.isLoginError">
+                                    <i class="fa fa-lg fa-times-circle"></i> Please enter valid login credentials.
                                 </div>
                             </div>
 
@@ -82,34 +81,46 @@
                 <!-- Register Form -->
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
-                        <form class="form contact-form" id="contact_form">
+                        <form class="form contact-form" id="contact_form" novalidate name="loginCtrl.registerForm">
                             <div class="clearfix">
                                 <!-- Email -->
-                                <div class="form-group">
-                                    <input type="text" name="Email" id="Email" class="input-md round form-control" placeholder="Email" pattern=".{3,100}" required ng-model="loginCtrl.newUser.email">
+                                <div class="form-group has-feedback" ng-class="{ 'has-error': loginCtrl.isInvalidInput(loginCtrl.registerForm.email) }">
+                                    <input type="email" name="email" id="Email" class="input-md round form-control" placeholder="Email" required ng-model="loginCtrl.newUser.email">
+                                    <small ng-show="loginCtrl.isInvalidInput(loginCtrl.registerForm.email)" class="help-block">Please enter a valid email.</small>
                                 </div>
 
                                 <!-- Username -->
-                                <div class="form-group">
-                                    <input type="text" name="username" id="username" class="input-md round form-control" placeholder="Username" pattern=".{3,100}"
-                                        required ng-model="loginCtrl.newUser.username">
+                                <div class="form-group" ng-class="{ 'has-error': loginCtrl.isInvalidInput(loginCtrl.registerForm.username) }">
+                                    <input type="text" name="username" id="username" class="input-md round form-control" placeholder="Username" required ng-model="loginCtrl.newUser.username">
+                                    <small ng-show="loginCtrl.isInvalidInput(loginCtrl.registerForm.username)" class="help-block">Please enter a username.</small>
                                 </div>
 
                                 <!-- Password -->
-                                <div class="form-group">
-                                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password" pattern=".{5,100}" required ng-model="loginCtrl.newUser.password">
+                                <div class="form-group" ng-class="{ 'has-error': loginCtrl.isInvalidInput(loginCtrl.registerForm.password) }">
+                                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Password" required ng-model="loginCtrl.newUser.password">
+                                    <small ng-show="loginCtrl.isInvalidInput(loginCtrl.registerForm.password)" class="help-block">Please enter a password.</small>
                                 </div>
 
                                 <!-- Re-enter Password -->
-                                <div class="form-group">
-                                    <input type="password" name="re-password" id="re-password" class="input-md round form-control" placeholder="Re-enter Password"
-                                        pattern=".{5,100}" required ng-model="loginCtrl.newUser.password2">
+                                <div class="form-group" ng-class="{ 'has-error': loginCtrl.isInvalidInput(loginCtrl.registerForm.password2) }">
+                                    <input type="password" name="password2" id="re-password" class="input-md round form-control" placeholder="Re-enter Password" required ng-model="loginCtrl.newUser.password2">
+                                    <small ng-show="loginCtrl.registerForm.password2.$touched && !loginCtrl.isMatchingPassword()" class="help-block">Passwords Must Match.</small>
+                                </div>
+
+                                <!-- Fields Error Message -->
+                                <div class="alert error" ng-show="loginCtrl.isRegisterError && !loginCtrl.isRegisterSuccess">
+                                    <i class="fa fa-lg fa-times-circle"></i>Please Correct Form Entries.
+                                </div>
+
+                                <!-- Success Message -->
+                                <div class="alert success" ng-show="loginCtrl.isRegisterSuccess">
+                                    <i class="fa fa-lg fa-check-circle-o"></i> Register Success. You may now login.
                                 </div>
                             </div>
 
                             <!-- Send Button -->
                             <div class="pt-10">
-                                <button class="submit_btn btn btn-mod btn-medium btn-round btn-full" id="reg-btn">Register</button>
+                                <button class="submit_btn btn btn-mod btn-medium btn-round btn-full" id="reg-btn" ng-click="loginCtrl.register()">Register</button>
                             </div>
 
                         </form>

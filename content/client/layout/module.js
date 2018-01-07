@@ -67,9 +67,24 @@
                             $state.go('admin.home')
                         }],
                     }
+                },
+                resolve: {
+                    authenticate: authenticate
                 }
 
             })
+    }
+
+    authenticate.$inject = ['$q', '$window', '$timeout', 'authenticationService']
+    function authenticate($q, $window, $timeout, authenticationService) {
+        let loginStatus = authenticationService.checkLoginStatus()
+        if (loginStatus) {
+            return $q.resolve()
+        } else {
+            $timeout(() => $window.location.href = "/login")
+            // $state.go('authentication.login'))
+            return $q.reject()
+        }
     }
 
 })();

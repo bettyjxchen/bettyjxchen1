@@ -11,21 +11,31 @@
 
         vm.message = {}
 
-        vm.toggle = _toggle
+        vm.toggleRead = _toggleRead
+        vm.checkIsRead = _checkIsRead
+
+        vm.red = 'red'
 
         init()
 
         function init() {
             vm.message = message
-            // console.log(vm.message)
-            console.log(vm.message.isUnread)
-    
+            console.log(vm.message)
+            console.log(vm.message.isRead)
         }
 
-        function _toggle() {
-            console.log('hi')
+        function _toggleRead() {
+            console.log(`message read status changed to ${vm.message.isRead}`)
+          
+            messageService.update(vm.message)
+                .then(data => {
+                    console.log('updated')
+                })
         }
 
+    function _checkIsRead() {
+        return vm.message.isRead
+    }
 
     }
 

@@ -6,6 +6,7 @@ const ObjectId = mongodb.ObjectId
 module.exports = {
     readAll: _readAll,
     readById: _readById,
+    readCredentials: _readCredentials,
     create: _create,
     update: _update,
     delete: _delete
@@ -30,12 +31,21 @@ function _readById(id) {
         })
 }
 
+function _readCredentials(credentials) {
+    let query = { username: credentials.username, password: credentials.password, 'dateDeactivated': null }
+    return conn.conn().collection('users').find(query).toArray()
+        .then(user => {
+            user = user[0]
+            user._id = user._id.toString()
+            return user
+        })
+}
+
 function _create(model) {
     let doc = {
-       name: model.name,
        email: model.email,
-       user: model.user,
-       isUnread: true,
+       username: model.username,
+       password: model.password,
        dateCreated: new Date(),
     }
     return conn.conn().collection('users').insert(doc)
@@ -46,10 +56,9 @@ function _create(model) {
 
 function _update(id, model) {
     let doc = {
-        name: model.name,
         email: model.email,
-        user: model.user,
-        isUnread: model.isUnread,
+         username: model.username,
+        password: model.password,
         dateModified: new Date()
      }
 

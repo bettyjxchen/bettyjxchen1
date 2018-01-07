@@ -13,6 +13,8 @@
             readAll: _readAll,
             readById: _readById,
             create: _create,
+            login: _login,
+            logout: _logout,
             update: _update,
             delete: _delete
         }
@@ -34,7 +36,19 @@
         }
 
         function _create(data) {
-            return $http.post('/api/users', data)
+            return $http.post('/api/users/register', data)
+                .then(xhrSuccess)
+                .catch(onError)
+        }
+
+        function _login(user) {
+            return $http.post('api/users/login', user)
+                .then(xhrSuccess)
+                .catch(onError)
+        }
+
+        function _logout() {
+            return $http.post('api/users/logout')
                 .then(xhrSuccess)
                 .catch(onError)
         }

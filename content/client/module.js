@@ -8,6 +8,8 @@
             // 3rd party
             'ui.router',
             'ui.bootstrap',
+            'ngCookies',
+            // 'ui.toggle',
 
             //base / common
             `${appName}.layout`,
