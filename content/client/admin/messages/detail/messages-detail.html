@@ -1,10 +1,11 @@
+
 <!-- Main Content Start -->
 <section id="main-content">
     <section class="wrapper">
         <!-- List View -->
         <div class="row mt">
             <!-- Message -->
-            <div class="col-lg-10">
+            <div class="col-lg-9">
                 <div class="form-panel">
                     <button class="btn btn-default pull-right" ui-sref="admin.messages">Back</button>
                     <h4 class="mb">Message</h4>
@@ -44,25 +45,28 @@
             </div>
 
             <!-- Toggle -->
-            <div class="col-lg-2">
+            <div class="col-lg-3">
                 <div class="form-panel">
                     <h4 class="mb">
-                        <i class="fa fa-angle-right"></i> Read</h4>
-                    <div class="row mt">
+                        <i class="fa fa-angle-right"></i> Message Status</h4>
+                        <div class="row mt">
                         <div class="col-sm-6 text-center">
-                            <!-- If Read -->
-                            <div ng-show="!detailCtrl.message.isUnread" class="switch switch-square" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-                                <input checked type="checkbox" />
+                            <!-- Checkbox -->
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="isRead" ng-value="true" ng-model="detailCtrl.message.isRead" ng-change="detailCtrl.toggleRead()">
+                                   Read
+                                </label>
                             </div>
-                            <!-- If Unread -->
-                            <div ng-show="detailCtrl.message.isUnread" class="switch switch-square" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-                                <input ng-show="detailCtrl.message.isUnread" type="checkbox" />
+                        </div>
+                            <div class="col-sm-6 text-center">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="isRead" ng-value="false" ng-model="detailCtrl.message.isRead" ng-change="detailCtrl.toggleRead()">
+                                   Unread
+                                </label>
                             </div>
-
-                            <!-- <div data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-                                <input type="checkbox" ng-model="detailCtrl.message.isUnread" />
-                            </div> -->
-
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -71,5 +75,3 @@
     </section>
 </section>
 
-<!--custom switch-->
-<script src="/theme/theme_admin/assets/js/bootstrap-switch.js"></script>

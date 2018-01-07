@@ -35,7 +35,7 @@ function _create(model) {
        name: model.name,
        email: model.email,
        message: model.message,
-       isUnread: true,
+       isRead: false,
        dateCreated: new Date(),
     }
     return conn.conn().collection('messages').insert(doc)
@@ -49,7 +49,7 @@ function _update(id, model) {
         name: model.name,
         email: model.email,
         message: model.message,
-        isUnread: model.isUnread,
+        isRead: model.isRead,
         dateModified: new Date()
      }
 

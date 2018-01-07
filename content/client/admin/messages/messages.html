@@ -33,8 +33,8 @@
                                 <td class="hidden-phone">{{message.message}}</td>
                                 <td>{{message.dateCreated | date: 'short' }}</td>
                                 <td>
-                                    <span class="label label-success label-mini" ng-show="message.isUnread">Unread</span>
-                                    <span class="label label-default label-mini" ng-show="!message.isUnread">Read</span>
+                                    <span class="label label-success label-mini" ng-show="!message.isRead">Unread</span>
+                                    <span class="label label-default label-mini" ng-show="message.isRead">Read</span>
                                 </td>
                                 <!-- buttons -->
                                 <td>

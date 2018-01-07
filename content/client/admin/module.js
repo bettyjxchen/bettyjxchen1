@@ -14,6 +14,10 @@
                         templateUrl: 'client/admin/home/home.html',
                         controller: 'homeController as homeCtrl'
                     }
+                },
+                resolve: {
+                    authenticate: authenticate,
+                    currentUser: getCurrentUser
                 }
             })
             .state('admin.messages', {
@@ -25,7 +29,8 @@
                     }
                 },
                 resolve: {
-                    messages: readAllMessages
+                    messages: readAllMessages,
+                    authenticate: authenticate
                 }
             })
             .state('admin.messages.detail', {
@@ -37,9 +42,27 @@
                     }
                 },
                 resolve: {
-                    message: readMessage
+                    message: readMessage,
+                    authenticate: authenticate
                 }
             })
+    }
+
+    authenticate.$inject = ['$q', '$window', '$timeout', 'authenticationService']
+    function authenticate($q, $window, $timeout, authenticationService) {
+        let loginStatus = authenticationService.checkLoginStatus()
+        if (loginStatus) {
+            return $q.resolve()
+        } else {
+            $timeout(() => $window.location.href = "/login")
+            return $q.reject()
+        }
+    }
+
+    getCurrentUser.$inject = ['authenticationService']
+    function getCurrentUser(authenticationService) {
+        let currentUser = authenticationService.getCurrentUser()
+        return currentUser
     }
 
     readAllMessages.$inject = ['messageService']
