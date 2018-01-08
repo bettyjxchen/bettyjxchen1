@@ -1,4 +1,3 @@
-
 <!-- Main Content Start -->
 <section id="main-content">
     <section class="wrapper">
@@ -7,7 +6,7 @@
             <!-- Message -->
             <div class="col-lg-9">
                 <div class="form-panel">
-                    <button class="btn btn-default pull-right" ui-sref="admin.messages">Back</button>
+                    <button class="btn btn-default pull-right" ui-sref="admin.messages" ui-sref-opts="{reload:true}">Back</button>
                     <h4 class="mb">Message</h4>
                     <form class="form-horizontal style-form" method="get">
                         <!-- Email -->
@@ -49,29 +48,26 @@
                 <div class="form-panel">
                     <h4 class="mb">
                         <i class="fa fa-angle-right"></i> Message Status</h4>
-                        <div class="row mt">
+                    <div class="row mt">
                         <div class="col-sm-6 text-center">
                             <!-- Checkbox -->
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="isRead" ng-value="true" ng-model="detailCtrl.message.isRead" ng-change="detailCtrl.toggleRead()">
-                                   Read
+                                    <input type="radio" name="isRead" ng-value="true" ng-model="detailCtrl.message.isRead" ng-change="detailCtrl.toggleRead()"> Read
                                 </label>
                             </div>
                         </div>
-                            <div class="col-sm-6 text-center">
+                        <div class="col-sm-6 text-center">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="isRead" ng-value="false" ng-model="detailCtrl.message.isRead" ng-change="detailCtrl.toggleRead()">
-                                   Unread
+                                    <input type="radio" name="isRead" ng-value="false" ng-model="detailCtrl.message.isRead" ng-change="detailCtrl.toggleRead()"> Unread
                                 </label>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 </section>
-

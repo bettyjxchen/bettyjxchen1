@@ -18,18 +18,19 @@
             delete: _delete
         }
 
-        function _readAll() {
-            return $http.get('/api/messages')
-                .then(dateChange =>
-                    convertAllDates(dateChange)
-                )
+        function _readAll(page) {
+            if (!page) {
+                page = 1
+            }
+            return $http.get(`/api/messages?page=${page}`)
+                .then(data => convertAllDates(data))
                 .catch(onError)
         }
 
         function _readById(id) {
             return $http.get(`/api/messages/${id}`)
-                .then(dateChange =>
-                    convertDate(dateChange)
+                .then(data =>
+                    convertDate(data)
                 )
                 .catch(onError)
         }
@@ -56,27 +57,24 @@
             return responses.data
         }
 
-        function convertAllDates(dateChange){
-            for (let x = 0; x < dateChange.data.length; x++) {
-                dateChange.data[x].dateCreated = new Date(dateChange.data[x].dateCreated)
-                dateChange.data[x].dateModified = new Date(dateChange.data[x].dateModified)
-                dateChange.data[x].birthDate = new Date(dateChange.data[x].birthdate)
-                if (dateChange.data[x].dateDeactivated !== null) {
-                    dateChange.data[x].dateDeactivated = new Date(dateChange.data[x].dateDeactivated)
+        function convertAllDates(data){
+            for (let x = 0; x < data.data.items.messages.length; x++) {
+                data.data.items.messages[x].dateCreated = new Date(data.data.items.messages[x].dateCreated)     
+                data.data.items.messages[x].dateModified = new Date(data.data.items.messages[x].dateModified)
+                if (data.data.items.messages[x].dateDeactivated !== null) {
+                    data.data.items.messages[x].dateDeactivated = new Date(data.data.items.messages[x].dateDeactivated)
                 }
-                
             }
-            return dateChange.data   
+            return data.data 
         }
 
-        function convertDate(dateChange){
-            dateChange.data.dateCreated = new Date(dateChange.data.dateCreated)
-            dateChange.data.dateModified = new Date(dateChange.data.dateModified)
-            dateChange.data.birthDate = new Date(dateChange.data.birthdate)
-            if (dateChange.data.dateDeactivated !== null) {
-                dateChange.data.dateDeactivated = new Date(dateChange.data.dateDeactivated)
+        function convertDate(data){
+            data.data.item.dateCreated = new Date(data.data.item.dateCreated)
+            data.data.item.dateModified = new Date(data.data.item.dateModified)
+            if (data.data.item.dateDeactivated !== null) {
+                data.data.item.dateDeactivated = new Date(data.data.item.dateDeactivated)
             }
-            return dateChange.data
+            return data.data
         }
 
         function onError(error) {

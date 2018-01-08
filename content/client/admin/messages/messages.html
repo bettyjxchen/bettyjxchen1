@@ -40,7 +40,7 @@
                                 <td>
                                     <!-- edit -->
                                     <button class="btn btn-primary btn-xs pull-right btn-margin">
-                                        <i class="fa fa-pencil"></i>
+                                        <i class="fa fa-eye"></i>
                                     </button>
                                     <!-- delete -->
                                     <button class="btn btn-danger btn-xs pull-right btn-margin" ng-click="msgCtrl.delete($index)">
@@ -50,6 +50,12 @@
                             </tr>
                         </tbody>
                     </table>
+                     <!-- begin pagination -->
+                     <div class="pagination-container pull-right">
+                        <ul uib-pagination total-items="msgCtrl.totalItems" items-per-page="15" ng-model="msgCtrl.currentPage" ng-change="msgCtrl.pageChanged(msgCtrl.currentPage)" class="pagination m-t-0 m-b-0" previous-text="&laquo;" next-text="&raquo;">
+                        </ul>
+                    </div>
+                    <!-- end pagination -->
                 </div>
                 <!-- /content-panel end -->
             </div>

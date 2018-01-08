@@ -21,7 +21,7 @@
                 }
             })
             .state('admin.messages', {
-                url: '/messages',
+                url: '/messages?page',
                 views: {
                     'content@': {
                         templateUrl: 'client/admin/messages/messages.html',
@@ -65,9 +65,9 @@
         return currentUser
     }
 
-    readAllMessages.$inject = ['messageService']
-    function readAllMessages(messageService) {
-        return messageService.readAll()
+    readAllMessages.$inject = ['messageService', '$stateParams']
+    function readAllMessages(messageService, $stateParams) {
+        return messageService.readAll($stateParams.page)
             .then(data => data.items)
     }
 
