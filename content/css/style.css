@@ -21,3 +21,7 @@ ul.top-menu > li > a {
     margin-left: 5px;
 }
 
+.admin-message_content {
+    word-wrap: break-word;
+    max-width: 400px;
+}

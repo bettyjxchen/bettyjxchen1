@@ -26,12 +26,15 @@
         <!-- Nav Tabs -->
         <div class="align-center mb-40 mb-xxs-30">
             <ul class="nav nav-tabs tpl-minimal-tabs">
-                <li class="active">
+                 <!-- Hide Login Tab -->
+                <!-- <li class="active">
                     <a href="#login" data-toggle="tab">Login</a>
-                </li>
-                <li>
+                </li> -->
+
+                <!-- Hide Registration Tab -->
+                <!-- <li>
                     <a href="#register" data-toggle="tab">Registration</a>
-                </li>
+                </li> -->
             </ul>
         </div>
         <!-- End Nav Tabs -->
@@ -104,7 +107,7 @@
                                 <!-- Re-enter Password -->
                                 <div class="form-group" ng-class="{ 'has-error': loginCtrl.isInvalidInput(loginCtrl.registerForm.password2) }">
                                     <input type="password" name="password2" id="re-password" class="input-md round form-control" placeholder="Re-enter Password" required ng-model="loginCtrl.newUser.password2">
-                                    <small ng-show="loginCtrl.registerForm.password2.$touched && !loginCtrl.isMatchingPassword()" class="help-block">Passwords Must Match.</small>
+                                    <small class="help-block" ng-show="loginCtrl.registerForm.password2.$touched && loginCtrl.registerForm.password.$touched && !loginCtrl.isMatchingPassword()">Passwords Must Match.</small>
                                 </div>
 
                                 <!-- Fields Error Message -->
