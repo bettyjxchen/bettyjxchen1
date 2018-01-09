@@ -10,20 +10,29 @@
         var vm = this
 
         vm.formData = {}
+        vm.isMessageSuccess = false
+        vm.isMessageSuccess = false
+
         vm.submitMessage = _submitMessage
 
         init()
 
         function init() {
-             
+
         }
 
         function _submitMessage() {
-            console.log(vm.formData)
-            return messageService.create(vm.formData)
-                .then(() => {
-                    vm.formData = {}
-                })
+            if (vm.contactForm.$valid) {
+                messageService.create(vm.formData)
+                    .then(() => {
+                        vm.formData = {}
+                        vm.isMessageSuccess = true
+                        vm.isMessageError = false
+                    })
+            }
+            else {
+                vm.isMessageError = true
+            }
         }
 
 

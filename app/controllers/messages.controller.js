@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function _readAll(req, res) {
-    messagesService.readAll()
+    messagesService.readAll(req.query.page)
         .then(messages => {
             const responseModel = new responses.ItemsResponse()
             responseModel.items = messages

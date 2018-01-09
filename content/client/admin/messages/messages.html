@@ -30,7 +30,7 @@
                                         {{message.name}}
                                     </a>
                                 </td>
-                                <td class="hidden-phone">{{message.message}}</td>
+                                <td class="hidden-phone admin-message_content">{{message.message}}</td>
                                 <td>{{message.dateCreated | date: 'short' }}</td>
                                 <td>
                                     <span class="label label-success label-mini" ng-show="!message.isRead">Unread</span>
@@ -39,8 +39,8 @@
                                 <!-- buttons -->
                                 <td>
                                     <!-- edit -->
-                                    <button class="btn btn-primary btn-xs pull-right btn-margin">
-                                        <i class="fa fa-pencil"></i>
+                                    <button class="btn btn-primary btn-xs pull-right btn-margin" ui-sref="admin.messages.detail({id: message._id})">
+                                        <i class="fa fa-eye"></i>
                                     </button>
                                     <!-- delete -->
                                     <button class="btn btn-danger btn-xs pull-right btn-margin" ng-click="msgCtrl.delete($index)">
@@ -50,6 +50,12 @@
                             </tr>
                         </tbody>
                     </table>
+                     <!-- begin pagination -->
+                     <div class="pagination-container pull-right">
+                        <ul uib-pagination total-items="msgCtrl.totalItems" items-per-page="15" ng-model="msgCtrl.currentPage" ng-change="msgCtrl.pageChanged(msgCtrl.currentPage)" class="pagination m-t-0 m-b-0" previous-text="&laquo;" next-text="&raquo;">
+                        </ul>
+                    </div>
+                    <!-- end pagination -->
                 </div>
                 <!-- /content-panel end -->
             </div>

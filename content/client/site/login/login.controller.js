@@ -68,7 +68,7 @@
             return input.$touched && input.$invalid
         }
 
-        function _isMatchingPassword(password, password2) {
+        function _isMatchingPassword() {
             return vm.newUser.password === vm.newUser.password2
         }
 

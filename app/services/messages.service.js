@@ -11,13 +11,54 @@ module.exports = {
     delete: _delete
 }
 
-function _readAll() {
-    return conn.conn().collection('messages').find({ 'dateDeactivated': null }).toArray()
-        .then( messages => {
-            for (let i = 0; i < messages.length; i++) {
-                let message = messages[i]
-                message._id = message._id.toString() 
+function _readAll(queryPage) {
+    var skip = (queryPage - 1) * 15
+    var limit = 15
+
+    if (!queryPage) {
+        skip = 0
+    }
+
+    return conn.conn().collection('messages').aggregate([
+        {
+            $match: { 'dateDeactivated': null }
+        },
+        {
+            $sort: {
+                "dateCreated": -1
             }
+        },
+        {
+            $facet: {
+                count: [
+                    { $count: 'count' },
+                ],
+                messages: [
+                    {
+                        $skip: skip
+                    },
+                    {
+                        $limit: limit
+                    }
+                ]
+            }
+        },
+        {
+            $project: {
+                count: { $arrayElemAt: ['$count', 0] },
+                messages: 1
+            }
+        },
+        {
+            $project: {
+                count: '$count.count',
+                messages: 1
+            }
+        }
+    ]).toArray()
+        .then(messages => {
+            messages = messages[0]
+            messages.messages.forEach(message => message._id = message._id.toString())
             return messages
         })
 }
