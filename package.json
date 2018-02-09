@@ -11,6 +11,7 @@
     "content/libs"
   ],
   "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
     "angular-bootstrap-toggle": "^0.1.2",
     "angular-cookies": "^1.6.8",
     "bcrypt-nodejs": "0.0.3",

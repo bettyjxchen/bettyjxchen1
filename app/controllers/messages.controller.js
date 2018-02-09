@@ -1,5 +1,6 @@
 const responses = require('../models/responses');
 const messagesService = require('../services/messages.service')
+const emailsService = require('../services/emails.service')
 const apiPrefix = '/api/messages'
 
 module.exports = {
@@ -38,6 +39,16 @@ function _readById(req, res) {
 
 function _create(req, res) {
     messagesService.create(req.model)
+        .then(id => {
+            let email= Object.assign(
+                {toEmail: process.env.SENDGRID_TO_EMAIL}, 
+                {senderName: req.model.name}, 
+                {senderEmail : req.model.email}, 
+                {message : req.model.message},
+                {id: id})
+            emailsService.sendRegistrationEmailConfirmation(email)
+            return id
+        })
         .then(id => {
             const responseModel = new responses.ItemResponse()
             responseModel.item = id
