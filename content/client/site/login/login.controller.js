@@ -10,13 +10,11 @@
         var vm = this
 
         vm.isLoginError = false
-        vm.isRegisterError = false
 
         vm.newUser = {}
         vm.oldUser = {}
 
         vm.login = _login
-        vm.register = _register
         vm.isInvalidInput = _isInvalidInput
         vm.isMatchingPassword = _isMatchingPassword
 
@@ -42,25 +40,9 @@
             }
         }
 
-        function _register() {
-            if (vm.registerForm.$valid && vm.newUser.password === vm.newUser.password2) {
-                console.log(vm.newUser)
-                userService.create(vm.newUser)
-                    .then(data => {
-                        clearForm()
-                        vm.isRegisterError = false
-                        vm.isRegisterSuccess = true
-                    })
-            }
-            else {
-                vm.isRegisterError = true
-            }
-        }
-
         function clearForm() {
             vm.oldUser = {}
             vm.newUser = {}
-            vm.registerForm.$setUntouched()
             vm.loginForm.$setUntouched()
         }
 
@@ -71,6 +53,21 @@
         function _isMatchingPassword() {
             return vm.newUser.password === vm.newUser.password2
         }
+
+        // function _register() {
+        //     if (vm.registerForm.$valid && vm.newUser.password === vm.newUser.password2) {
+        //         console.log(vm.newUser)
+        //         userService.create(vm.newUser)
+        //             .then(data => {
+        //                 clearForm()
+        //                 vm.isRegisterError = false
+        //                 vm.isRegisterSuccess = true
+        //             })
+        //     }
+        //     else {
+        //         vm.isRegisterError = true
+        //     }
+        // }
 
     }
 
