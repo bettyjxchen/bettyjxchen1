@@ -6,15 +6,15 @@
     cursor: default
 }
 
-ul.top-menu > li > a {
-   color: #666666;
-   font-size: 12px;
-   font-family: "Helvetica Neue";
-   border-radius: 4px;
-   -webkit-border-radius: 4px;
-   padding: 5px 15px;
-   margin-right: 15px;
-   margin-top: 15px;
+ul.top-menu>li>a {
+    color: #666666;
+    font-size: 12px;
+    font-family: "Helvetica Neue";
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 5px 15px;
+    margin-right: 15px;
+    margin-top: 15px;
 }
 
 .btn-margin {
@@ -24,4 +24,8 @@ ul.top-menu > li > a {
 .admin-message_content {
     word-wrap: break-word;
     max-width: 400px;
+}
+
+.alt-features-descr-dark {
+    color: #1e1f21;
 }
