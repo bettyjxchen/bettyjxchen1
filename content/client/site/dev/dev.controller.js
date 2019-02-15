@@ -3,19 +3,19 @@
 
 	DevController.$inject = ["$window", "$timeout", "$location", "$anchorScroll"];
 
-	function DevController($window, $timeout) {
+	function DevController($window, $timeout, $location, $anchorScroll) {
 		var vm = this;
 
 		init();
 
 		function init() {
-			// $timeout($window.themeAll)
 			$window.themeAll();
+			_scrollToTop();
 		}
 
 		function _scrollToTop() {
 			$timeout(() => {
-				$location.hash("");
+				$location.hash("0");
 				$anchorScroll();
 			});
 		}
