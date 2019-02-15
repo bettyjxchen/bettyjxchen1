@@ -1,33 +1,33 @@
-(function () {
+(function() {
+	angular
+		.module("client.layout")
+		.controller("worksController", WorksController);
 
-    angular
-        .module('client.layout')
-        .controller('worksController', WorksController)
+	WorksController.$inject = [
+		"$window",
+		"$timeout",
+		"$location",
+		"$anchorScroll"
+	];
 
-    WorksController.$inject = ['$window', '$timeout', '$location', '$anchorScroll']
+	function WorksController($window, $timeout, $location, $anchorScroll) {
+		var vm = this;
 
-    function WorksController($window, $timeout, $location, $anchorScroll) {
-        var vm = this
+		vm.scrollToTop = _scrollToTop;
 
-        vm.scrollToTop = _scrollToTop
+		init();
 
-        init()
+		function init() {
+			$window.themeAll();
+			// $timeout(() => $window.App().init())
+			_scrollToTop();
+		}
 
-        function init() {
-            $window.themeAll()
-            // $timeout(() => $window.App().init())
-            _scrollToTop()
-
-        }
-
-        function _scrollToTop() {
-            $timeout(() => {
-                $location.hash('')
-                $anchorScroll()
-            })
-        }
-
-    }
-
-
+		function _scrollToTop() {
+			$timeout(() => {
+				$location.hash("");
+				$anchorScroll();
+			});
+		}
+	}
 })();

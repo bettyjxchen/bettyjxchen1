@@ -18,510 +18,327 @@
         </div>
     </div>
 </section>
-<!-- End Head Section -->
 
 <!-- Portfolio Section -->
 <section class="page-section">
-    <div class="container relative">
+    <div class="relative" style="display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;">
 
         <!-- Works Filter -->
-        <div class="works-filter font-alt align-center">
-            <a href="#all" class="filter active" data-filter=".all">All works</a>
+        <div class=" works-filter font-alt align-center">
+            <a href="#" class="filter active" data-filter="*">All works</a>
             <a href="#web" class="filter" data-filter=".web">Web Dev</a>
             <a href="#branding" class="filter" data-filter=".branding">Branding</a>
             <a href="#photography" class="filter" data-filter=".photography">Photography</a>
-            <a href="#blog" class="filter" data-filter=".blog">Blog</a>
         </div>
-        <!-- End Works Filter -->
 
         <!-- Works Grid -->
-        <ul class="works-grid work-grid-2 work-grid-gut clearfix font-alt hover-white hide-titles" id="work-grid">
+        <div class="clearfix" style="width: 60%;">
+            <ul class="works-grid work-grid-2 clearfix font-alt hover-white hide-titles masonry" id="work-grid">
 
-            <!----------------------- ** Start Branding ** ---------------------- -->
-            <!-- Work Item (External Page) -->
-            <li class="work-item all mix branding">
-                <a ui-sref="site.snapple" class="work-ext-link">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/branding/branding-snapple0-1:2.png" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Snapple Marketing Campaign</h3>
-                        <div class="work-descr">
-                            NSAC 2016
+                <!-- Work Item (Bonafide) -->
+                <li class="work-item mix all web">
+                    <a ui-sref="site.bonafide" class="work-ext-link">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/web/bonafide/bonafide.png" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (External Page) -->
-            <li class="work-item all mix branding">
-                <a ui-sref="site.snapple" class="work-ext-link">
-                    <div class="work-img">
-                        <img class="work-img" src="/theme/images/portfolio/branding/branding-snapple2.png" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Snapple Marketing Campaign</h3>
-                        <div class="work-descr">
-                            Media Strategy
+                        <div class="work-intro">
+                            <h3 class="work-title">Bonafide Management Systems</h3>
+                            <div class="work-descr">
+                                Web App
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (External Page) -->
-            <li class="work-item all mix branding">
-                <a ui-sref="site.snapple" class="work-ext-link">
-                    <div class="work-img">
-                        <img class="work-img" src="/theme/images/portfolio/branding/branding-snapple0-2:2.png" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Snapple Marketing Campaign</h3>
-                        <div class="work-descr">
-                            NSAC 2016
+                <!-- Work Item (Laso) -->
+                <li class="work-item mix all web">
+                    <a ui-sref="site.laso" class="work-ext-link">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/web/laso/laso-1.png" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (External Page) -->
-            <li class="work-item all mix branding">
-                <a ui-sref="site.snapple" class="work-ext-link">
-                    <div class="work-img">
-                        <img class="work-img" src="/theme/images/portfolio/branding/branding-snapple3.png" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Snapple Marketing Campaign</h3>
-                        <div class="work-descr">
-                            Media Placement and Budgeting
+                        <div class="work-intro">
+                            <h3 class="work-title">Laso Concepts</h3>
+                            <div class="work-descr">
+                                Web App
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!----------------------- ** Start Web ** ---------------------- -->
-            <!-- Work Item (External Page) -->
-            <li class="work-item all mix web">
-                <a ui-sref="site.laso" class="work-ext-link">
-                    <div class="work-img">
-                        <img class="work-img" src="/theme/images/portfolio/web/laso-1.png" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Laso Concepts</h3>
-                        <div class="work-descr">
-                            Web Application
+                <!-- Work Item (Friendzone) -->
+                <li class="work-item mix all web">
+                    <a ui-sref="site.friendzone" class="work-ext-link">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/web/friendzone/friendzone-1.png" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (External Page) -->
-            <li class="work-item all mix web">
-                <a ui-sref="site.laso" class="work-ext-link">
-                    <div class="work-img">
-                        <img class="work-img" src="/theme/images/portfolio/web/laso-2.png" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Laso Concepts</h3>
-                        <div class="work-descr">
-                            Web Application
+                        <div class="work-intro">
+                            <h3 class="work-title">Friendzone</h3>
+                            <div class="work-descr">
+                                Web App
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!----------------------- ** Start Photography ** ---------------------- -->
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-1.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-1.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                <!-- Work Item (Where To Study) -->
+                <li class="work-item mix all web">
+                    <a ui-sref="site.where-to-study" class="work-ext-link">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/web/where-to-study/where-2.png" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-2.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-2.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                        <div class="work-intro">
+                            <h3 class="work-title">Where To Study</h3>
+                            <div class="work-descr">
+                                Web App
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-3.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-3.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                <!-- Work Item (HSHS) -->
+                <li class="work-item mix all web">
+                    <a ui-sref="site.hshs" class="work-ext-link">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/web/hshs/hshs-0.png" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-4.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-4.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                        <div class="work-intro">
+                            <h3 class="work-title">Harvard Square Homeless Shelter</h3>
+                            <div class="work-descr">
+                                Web App
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-5.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-5.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                <!-- Work Item (Snapple) -->
+                <li class="work-item mix all branding">
+                    <a ui-sref="site.snapple" class="work-ext-link">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/branding/branding-snapple0-1:2.png" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-6.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-6.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                        <div class="work-intro">
+                            <h3 class="work-title">Snapple</h3>
+                            <div class="work-descr">
+                                Marketing Campaign NSAC 2016
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-7.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-7.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-1.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-1.jpg" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-8.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-8.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-9.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-9.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-2.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-2.jpg" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix photography">
-                <a href="/theme/images/portfolio/photography/film/film-10.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/photography/film/film-10.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Film</h3>
-                        <div class="work-descr">
-                            Lomography
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!----------------------- ** Start Blog ** ---------------------- -->
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-9.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-9.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Pressed Juicery</h3>
-                        <div class="work-descr">
-                            Beverly Grove, Los Angeles
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-3.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-3.jpg" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-2.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-2.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Rose Café</h3>
-                        <div class="work-descr">
-                            Venice, Los Angeles
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-3.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-3.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Workaholic</h3>
-                        <div class="work-descr">
-                            Smorgasburg, Los Angeles
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-4.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-4.jpg" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-10.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-10.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Salt Air</h3>
-                        <div class="work-descr">
-                            Venice, Los Angeles
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-5.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-5.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">EdiBOL</h3>
-                        <div class="work-descr">
-                            Arts District, Los Angeles
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-5.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-5.jpg" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-6.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-6.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">71Above</h3>
-                        <div class="work-descr">
-                            Financial District, Los Angeles
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-7.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-7.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Mendocino Farms</h3>
-                        <div class="work-descr">
-                            Marina Del Rey, Los Angeles
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-6.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-6.jpg" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-8.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-8.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Hawaiian Bbq</h3>
-                        <div class="work-descr">
-                            OC Fair, Los Angeles
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-4.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-4.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Cha Cha Matcha</h3>
-                        <div class="work-descr">
-                            Lower Manhattan, New York
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-7.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-7.jpg" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-1.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-1.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Blue Star Donuts</h3>
-                        <div class="work-descr">
-                            Venice, Los Angeles
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-11.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-11.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Estrella</h3>
-                        <div class="work-descr">
-                            West Hollywood, Los Angeles
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-8.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-8.jpg" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-12.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-12.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Momofuku Milk Bar</h3>
-                        <div class="work-descr">
-                            New York
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-13.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-13.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">The Dorian</h3>
-                        <div class="work-descr">
-                            San Francisco
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-9.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-9.jpg" alt="Work" />
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
-
-            <!-- Work Item (Lightbox) -->
-            <li class="work-item mix blog">
-                <a href="/theme/images/portfolio/blog/food-14.jpg" class="work-lightbox-link mfp-image">
-                    <div class="work-img">
-                        <img src="/theme/images/portfolio/blog/food-14.jpg" alt="Work" />
-                    </div>
-                    <div class="work-intro">
-                        <h3 class="work-title">Resident LA</h3>
-                        <div class="work-descr">
-                            Arts District, Los Angeles
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!-- End Work Item -->
+                    </a>
+                </li>
 
-        </ul>
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/photography/film/film-10.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/photography/film/film-10.jpg" alt="Work" />
+                        </div>
+                        <div class="work-intro">
+                            <h3 class="work-title">Film</h3>
+                            <div class="work-descr">
+                                Lomography
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/blog/food-1.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/blog/food-1.jpg" alt="Work" />
+                        </div>
+                        <div class="work-intro">
+                            <h3 class="work-title">Blue Star Donuts</h3>
+                            <div class="work-descr">
+                                Venice, Los Angeles
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/blog/food-2.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/blog/food-2.jpg" alt="Work" />
+                        </div>
+                        <div class="work-intro">
+                            <h3 class="work-title">Rose Café</h3>
+                            <div class="work-descr">
+                                Venice, Los Angeles
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/blog/food-10.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/blog/food-10.jpg" alt="Work" />
+                        </div>
+                        <div class="work-intro">
+                            <h3 class="work-title">Salt Air</h3>
+                            <div class="work-descr">
+                                Venice, Los Angeles
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- Work Item (Lightbox) -->
+                <li class="work-item mix photography">
+                    <a href="/theme/images/portfolio/blog/food-11.jpg" class="work-lightbox-link mfp-image">
+                        <div class="work-img">
+                            <img src="/theme/images/portfolio/blog/food-11.jpg" alt="Work" />
+                        </div>
+                        <div class="work-intro">
+                            <h3 class="work-title">Estrella</h3>
+                            <div class="work-descr">
+                                West Hollywood, Los Angeles
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <!-- End Works Grid -->
 
     </div>
