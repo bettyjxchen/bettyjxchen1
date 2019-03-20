@@ -4,6 +4,7 @@
     "version": "2.0.1",
     "scripts": {
         "heroku-postbuild": "gulp prod",
+        "postinstall": "bower install",
         "start": "nodemon server.js"
     },
     "cacheDirectories": [
@@ -53,14 +54,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/bettyjxchen/about.git"
+        "url": "git+https://github.com/bettyjxchen/bettyjxchen.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/bettyjxchen/about/issues"
+        "url": "https://github.com/bettyjxchen/bettyjxchen/issues"
     },
-    "homepage": "https://github.com/bettyjxchen/about#readme",
+    "homepage": "https://github.com/bettyjxchen/bettyjxchen#readme",
     "description": ""
 }
