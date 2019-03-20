@@ -1,32 +1,22 @@
-(function () {
+(function() {
+	angular.module("admin.layout").controller("adminController", AdminController);
 
-    angular
-        .module('admin.layout')
-        .controller('adminController', AdminController)
+	AdminController.$inject = ["userService", "$window"];
 
-    AdminController.$inject = ['userService', '$window']
+	function AdminController(userService, $window) {
+		var vm = this;
 
-    function AdminController(userService, $window) {
-        var vm = this
+		vm.logout = _logout;
 
-        vm.logout = _logout
+		init();
 
-        init()
+		function init() {}
 
-        function init() {
-
-        }
-
-        function _logout() {
-            console.log('click logout')
-            userService.logout()
-                .then(data => {
-                    $window.location.href = "/"
-                })
-        }
-
-
-    }
-
-
+		function _logout() {
+			console.log("click logout");
+			userService.logout().then(data => {
+				$window.location.href = "/";
+			});
+		}
+	}
 })();
