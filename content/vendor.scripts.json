@@ -1,7 +1,6 @@
 {
     "chunks": {
         "vendor": [
-            "jquery",
             "bootstrap",
             "angular",
             "angular-ui-router",
