@@ -15,7 +15,7 @@
 
 		function _scrollToTop() {
 			$timeout(() => {
-				$location.hash("0");
+				$location.hash(".");
 				$anchorScroll();
 			});
 		}

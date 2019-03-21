@@ -26,7 +26,8 @@
 		init();
 
 		function init() {
-			_scrollToTop();
+			// $window.themeAll();
+			// _scrollToTop();
 		}
 
 		function _scrollToTop() {
