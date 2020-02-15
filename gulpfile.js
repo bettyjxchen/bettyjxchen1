@@ -125,8 +125,8 @@ function buildVendor(scripts, dest) {
 	return mergeStream(tasks);
 }
 
-gulp.task("default", gulp.parallel("dev"));
 gulp.task("dev", gulp.parallel("vendor", "js", "watch"));
+gulp.task("default", gulp.parallel("dev"));
 
 const knownOptions = {
 	string: "packageName",
