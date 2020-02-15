@@ -125,10 +125,7 @@ function buildVendor(scripts, dest) {
 	return mergeStream(tasks);
 }
 
-gulp.task(
-	"default",
-	gulp.parallel("dev", function() {})
-);
+gulp.task("default", gulp.parallel("dev"));
 gulp.task("dev", gulp.parallel("vendor", "js", "watch"));
 
 const knownOptions = {
@@ -143,7 +140,7 @@ const knownOptions = {
 const options = minimist(process.argv.slice(2), knownOptions);
 // This task is specifically setup for deploying to AZURE.
 
-gulp.task("prod", ["vendor", "js"]);
+gulp.task("prod", gulp.parallel("vendor", "js"));
 
 function buildProdPackage() {
 	let packagePaths = [
