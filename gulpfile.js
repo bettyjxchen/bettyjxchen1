@@ -86,12 +86,9 @@ function buildApp(fileset) {
 	};
 }
 
-gulp.task(
-	"watch",
-	gulp.parallel("js", function() {
-		gulp.watch(source.js.src, { interval: 200 }, ["js"]);
-	})
-);
+gulp.task("watch", ["js"], function() {
+	gulp.watch(source.js.src, { interval: 200 }, ["js"]);
+});
 
 // builds vendor files listed in app.scripts.json
 gulp.task("vendor", () => buildVendor(scripts, destinations.js));
@@ -125,8 +122,8 @@ function buildVendor(scripts, dest) {
 	return mergeStream(tasks);
 }
 
-gulp.task("dev", gulp.parallel("vendor", "js", "watch"));
-gulp.task("default", gulp.parallel("dev"));
+gulp.task("default", ["dev"]);
+gulp.task("dev", ["vendor", "js", "watch"]);
 
 const knownOptions = {
 	string: "packageName",
@@ -140,12 +137,7 @@ const knownOptions = {
 const options = minimist(process.argv.slice(2), knownOptions);
 // This task is specifically setup for deploying to AZURE.
 
-gulp.task(
-	"prod",
-	gulp.parallel("vendor", "js", function() {
-		done();
-	})
-);
+gulp.task("prod", ["vendor", "js"]);
 
 function buildProdPackage() {
 	let packagePaths = [
