@@ -140,7 +140,12 @@ const knownOptions = {
 const options = minimist(process.argv.slice(2), knownOptions);
 // This task is specifically setup for deploying to AZURE.
 
-gulp.task("prod", gulp.parallel("vendor", "js"));
+gulp.task(
+	"prod",
+	gulp.parallel("vendor", "js", function() {
+		done();
+	})
+);
 
 function buildProdPackage() {
 	let packagePaths = [
